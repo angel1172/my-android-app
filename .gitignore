@@ -16,7 +16,7 @@ captures/
 *.apk
 output-metadata.json
 
-# IntelliJ
+# IntelliJ / Android Studio IDE files
 *.iml
 .idea/
 misc.xml
