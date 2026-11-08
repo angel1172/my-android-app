@@ -1,16 +1,18 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.activity.compose.setContent
-import androidx.navigation.compose.rememberNavController
+import com.example.myapplication.presentation.ui.AppListScreen
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity3 : AppCompatActivity() {
+@AndroidEntryPoint
+class MainActivity3 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -20,8 +22,9 @@ class MainActivity3 : AppCompatActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val navController = rememberNavController()
-                    NavGraph(navController = navController)
+                    AppListScreen(onAppClick = { app ->
+                        // здесь можно добавить навигацию или логирование
+                    })
                 }
             }
         }
